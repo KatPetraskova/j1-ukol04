@@ -11,16 +11,20 @@ public class Sportka {
   private final List<Integer> osudi = new ArrayList<>();
 
   public Sportka() {
-    //TODO naplnit osudí čísly 1 až 49.
+    for (int i = 0; i < 48; i++) {
+      osudi.add(i);
+    }
   }
 
-  /**
+   /**
    * Zamíchá osudí.
    *
    * @see Collections#shuffle(List)
    */
   public void zamichat() {
     //TODO zamíchat osudí
+    Collections.shuffle(osudi);
+
   }
 
   /**
@@ -31,9 +35,8 @@ public class Sportka {
    * @see List#subList(int, int)
    */
   public List<Integer> vylosovanaCisla() {
-    //TODO Vrátit seznam prvních 6 čísel z osudí.
-    return null;
-  }
+    return osudi.subList(0, 6);
+    }
 
   /**
    * Vrátí sedmé vylosované číslo (dodatkové číslo)
@@ -41,7 +44,6 @@ public class Sportka {
    * @return Dodatkové číslo.
    */
   public Integer dodatkoveCislo() {
-    //TODO Vrátit sedmé číslo z osudí.
-    return null;
+    return osudi.indexOf(6);
   }
 }
